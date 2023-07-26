@@ -1,0 +1,30 @@
+<section class="section products">
+   <ul>
+       <li *ngFor="let product of products">
+        <div class="card">
+            <div class="card-content">
+                <div class="media">
+                  <div class="media-left">
+                    <figure class="image is-96x96">
+                      <img src="https://image.migros.ch/2017-large/bc33dd03ebf40e01a98431432cb1b9f1396ed00d/bio-appenzeller-kaese-mild.jpg" alt="Placeholder image">
+                    </figure>
+                  </div>
+                  <div class="media-content">
+                    <p class="product-title">{{product.product.title}}</p>
+                    <p class="">{{product.product.subtitle}}</p>
+                    <p class="">{{product.product.price}} CHF</p>
+                  </div>
+                </div>
+                <div class="content">
+                    <button class="button is-danger mt-6">Remove</button>
+                    <div class="mt-2">
+                        <button class="button is-link mr-2">-</button>
+                        <input class="input is-link width" type="text" placeholder="Link input" value="{{product.amount}}">
+                        <button class="button is-link ml-2">+</button>
+                    </div>
+                </div>
+              </div>
+          </div>
+       </li>
+   </ul>
+</section>

@@ -1,0 +1,13 @@
+<div class="form">
+  <div>
+    <p>Vorname:</p>
+    <input type="text" [formControl]="checkOutForm.get('prename')">
+    <p>Nachname:</p>
+    <input type="text" [formControl]="checkOutForm.get('name')">
+    <p>Email:</p>
+    <input type="email" [formControl]="checkOutForm.get('email')">
+  </div>
+  <div class="buttonDiv">
+    <button class="button" [disabled]="checkOutForm.invalid" (click)="submitForm()">Einkauf abschliessen</button>
+  </div>
+</div>

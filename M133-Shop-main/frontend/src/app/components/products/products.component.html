@@ -1,0 +1,31 @@
+<section class="section sale">
+  <h1 class="title is-2">Unsere Produkte</h1>
+  <div class="columns is-desktop is-multiline">
+    <div class="column is-two-quarters-mobile is-one-thirds-tablet is-half-desktop is-one-third-widescreen is-one-quarter-fullhd"  *ngFor="let product of products">
+      <div class="card" (click)="openDialog(product)">
+        <div class="card-image" >
+          <img class="img" [src]="product.image" alt="">
+        </div>
+        <div class="card-content">
+          <div class="media">
+            <div class="media-content">
+              <h1 class="title is-4">{{product.title}}</h1>
+              <h1 class="subtitle is-6 has-text-info">{{product.subtitle}}</h1>
+              <div class="content" *ngIf="product.discount != 0">
+                <p class="discount subtitle">CHF {{product.price.toFixed(2)}}</p>
+                <p class="subtitle ml-2">CHF {{(product.price - (product.price/100)*(product.discount)).toFixed(2)}}</p>
+              </div>
+              <div class="content" *ngIf="product.discount == 0">
+                <p class="subtitle">CHF {{product.price.toFixed(2)}}</p>
+                <br>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center margin-top-30">
+    <button>Load more</button>
+  </div>
+</section>

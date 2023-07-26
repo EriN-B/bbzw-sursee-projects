@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto&display=swap');
+
+.card{
+  position : relative;
+  cursor: pointer;
+}
+
+.card .card__container{
+  position: relative;
+}
+
+
+.img{
+    height: 250px;
+    margin-top: 30px;
+}
+
+.card-image{
+    text-align: center;
+}
+
+.media-content{
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+body{
+    overflow: hidden;
+}
+
+.content{
+    display: flex;
+}
+
+.to-cart{
+    margin-left: 25%;
+}
+
+.is-discounted{
+    margin-left: 5px;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.margin-top-30{
+    margin-top: 30px;
+}
+
+
+.discount{
+    text-decoration: line-through;
+    text-decoration-color: hsl(204, 86%, 53%);
+}
+
+.hero-section {
+    text-align: center;
+}

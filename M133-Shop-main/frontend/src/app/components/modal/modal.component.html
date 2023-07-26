@@ -1,0 +1,17 @@
+<h1 mat-dialog-title class="dialog-title">{{product.title}}</h1>
+<div mat-dialog-content class="dialog-content">
+    <div>
+        <img src="{{product.image}} " alt=" ">
+    </div>
+    <div>
+      <h2>{{product.subtitle}}</h2>
+    </div>
+    <div>
+      <p *ngIf="product.discount > 0" class="priceHasDiscount">CHF {{product.price.toFixed(2)}}</p>
+      <p>CHF {{priceWithDiscount.toFixed(2)}}</p>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+    <button mat-button mat-dialog-close (click)="addToCart()">To Cart</button>
+</div>
