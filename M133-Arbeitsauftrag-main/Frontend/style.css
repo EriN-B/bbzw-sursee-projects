@@ -1,0 +1,12 @@
+.highlight{
+  min-height: 18px;
+  border: 1px dashed #9E9E9E !important;
+  background-color: transparent !important;
+  margin-top: 5px;
+  border-radius: 5px;
+  height: 100px;
+}
+
+ul, li {
+  list-style-type: none;
+}

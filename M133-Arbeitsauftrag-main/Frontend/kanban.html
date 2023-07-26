@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+      <link href="./style.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="https://code.jquery.com/ui/1.11.2/jquery-ui.js"></script> 
+      <script src="script.js"></script>
+      <title>Document</title>
+   </head>
+   <body>
+      <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 container" >
+         <!-- This example requires Tailwind CSS v2.0+ -->
+         <div class="lg:flex lg:items-center lg:justify-between mt-5">
+            <div class="flex-1 min-w-0">
+               <h2 class="text-2xl font-bold leading-7 text-gray-900 sm:text-3xl sm:truncate">
+                  Kanban Board
+               </h2>
+            </div>
+            <div class="mt-5 flex">
+               <span class="">
+                  <button type="button" class="inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 mr-50" data-modal-toggle="authentication-modal">
+                     <!-- Heroicon name: solid/check -->
+                     <svg class="-ml-1 mr-2 h-5 w-5 text-white-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                        <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                     </svg>
+                     Create
+                  </button>
+               </span>
+            </div>
+         </div>
+         <main class="p-3 flex mt-10">
+            <div id="authentication-modal" aria-hidden="true" class="hidden overflow-x-hidden overflow-y-auto fixed h-modal md:h-full top-4 left-0 right-0 md:inset-0 z-50 justify-center items-center ">
+               <div class="relative w-full max-w-md px-4 h-full md:h-auto">
+                  <!-- Modal content -->
+                  <div class="bg-white rounded-lg shadow relative dark:bg-gray-700">
+                     <div class="flex justify-end p-2">
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 ml-auto inline-flex items-center dark:hover:bg-gray-800 dark:hover:text-white" data-modal-toggle="authentication-modal">
+                           <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                              <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                           </svg>
+                        </button>
+                     </div>
+                     <form class="space-y-6 px-6 lg:px-8 pb-4 sm:pb-6 xl:pb-8" action="#">
+                        <h3 class="text-xl font-medium text-gray-900 dark:text-white">Create Task</h3>
+                        <div>
+                           <label for="email" class="text-sm font-medium text-gray-900 block mb-2 dark:text-gray-300">Task Description</label>
+                           <textarea class="form-textarea bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" rows="3" placeholder="Enter your Task Description" id="descriptionInput"></textarea>
+                        </div>
+                        <button type="submit" class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onclick="addTask()" data-modal-toggle="authentication-modal">Create Task</button>
+                     </form>
+                  </div>
+               </div>
+            </div>
+            <div class="mr-2 ml-2 p-3 w-80 bg-gray-100 rounded col min-h-full">
+               <h3 class="text-sm font-medium text-gray-900">Todo</h3>
+               <div class="cards min-h-full	">
+                  <ul class="mt-2 list-none	" id="todo" class="draggable min-h-full	">
+                  </ul>
+               </div>
+            </div>
+            <div class="mr-2 ml-2 p-3 w-80 bg-gray-100 rounded col min-h-full" >
+               <h3 class="text-sm font-medium text-gray-900">In Progress</h3>
+               <div class="cards min-h-full">
+                  <ul class="mt-2" id="progress" class="draggable min-h-full">
+                  </ul>
+               </div>
+            </div>
+            <div class="mr-2 ml-2 p-3 w-80 bg-gray-100 rounded col min-h-full">
+               <h3 class="text-sm font-medium text-gray-900">Done</h3>
+               <div class="cards min-h-full ">
+                  <ul class="mt-2 min-h-full" id="done">
+                  </ul>
+               </div>
+            </div>
+         </main>
+      </div>
+      <script src="https://unpkg.com/@themesberg/flowbite@1.2.0/dist/flowbite.bundle.js"></script>
+   </body>
+</html>
