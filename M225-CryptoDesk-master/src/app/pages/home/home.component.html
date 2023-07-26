@@ -1,0 +1,28 @@
+<div class="landing-page">
+  <div class="langing-page-box">
+    <div class="title-box">
+      <div class="title">
+        <h1 class="title-text">Your.</h1>
+        <h1 class="title-text">Crypto.</h1>
+        <h1 class="title-text">Overview.</h1>
+      </div>
+    </div>
+    <div class="search">
+      <h2 class="search-title">Search for a Crypto-Currency</h2>
+      <div class="form">
+        <form>
+          <mat-form-field>
+            <mat-label>Coin</mat-label>
+            <input [(ngModel)]="inputId" type="text" matInput [formControl]="myControl" [matAutocomplete]="auto" (click)="addItemsToAutoComplete()">
+            <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option.id}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <a class="search-button" mat-raised-button color="primary" (click)="navigateToDetailPage()">Search</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

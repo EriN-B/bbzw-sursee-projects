@@ -1,0 +1,30 @@
+<div class="content">
+  <div class="content-container">
+    <div class="content-container-1">
+      <h1>{{coinInfo.name}}</h1>
+      <button mat-raised-button color="primary">#{{coinInfo.rank}}</button>
+      <button mat-raised-button color="accent">{{coinInfo.symbol}}</button>
+      <button mat-raised-button color="accent">{{coinInfo.type | uppercase}}</button>
+    </div>
+    <div class="content-container-2">
+      <h1>$ {{removeDecimal(coinMarketPrice.quotes.USD.price)}}</h1>
+      <button mat-raised-button color="{{buttonColor}}">{{coinMarketPrice.quotes.USD.market_cap_change_24h}}%</button>
+    </div>
+
+    <div class="content-container-2">
+      <h2>{{coinInfo.description}}</h2>
+        <a mat-button href="{{coinInfo.links.website}}" *ngIf="coinInfo.links.website">
+          <mat-icon>language</mat-icon>
+          Website
+        </a>
+      <a mat-button href="{{coinInfo.links.source_code}}" *ngIf="coinInfo.links.source_code">
+        <mat-icon>code</mat-icon>
+        Source Code
+      </a>
+      <a mat-button href="{{coinInfo.links.youtube}}" *ngIf="coinInfo.links.youtube">
+        <mat-icon>play_arrow</mat-icon>
+        Youtube
+      </a>
+    </div>
+  </div>
+</div>

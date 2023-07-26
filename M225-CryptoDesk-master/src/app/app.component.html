@@ -1,0 +1,29 @@
+<mat-toolbar fxLayout="row" color="primary">
+  <span fxFlex href="/home">CryptoDesk</span>
+  <a mat-button *ngFor="let item of menuItems"
+          [fxShow]="item.showOnDesktop"
+          [fxShow.xs]="item.showOnMobile"
+          [fxShow.sm]="item.showOnTablet" href="{{item.link}}">
+    <mat-icon class="mr">{{item.icon}}</mat-icon >
+    {{item.label}}
+  </a>
+  <ng-container>
+    <a mat-icon-button [matMenuTriggerFor]="dropMenu">
+      <mat-icon>more_vert</mat-icon>
+    </a>
+    <mat-menu #dropMenu="matMenu">
+      <ng-container *ngFor="let item of menuItems">
+        <div [fxShow]="!item.showOnDesktop"
+             [fxShow.sm]="!item.showOnTablet"
+             [fxShow.xs]="!item.showOnMobile">
+          <a mat-menu-item href="{{item.link}}">
+            <mat-icon class="mr">{{item.icon}}</mat-icon>
+            {{item.label}}
+          </a>
+          <mat-divider></mat-divider>
+        </div>
+      </ng-container>
+    </mat-menu>
+  </ng-container>
+</mat-toolbar>
+<router-outlet> </router-outlet>
