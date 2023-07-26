@@ -1,0 +1,12 @@
+{
+  "name": "block1",
+  "version": "1.0.0",
+  "description": "Modul 151 Webserver mit Node.js-Bordmittel",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
